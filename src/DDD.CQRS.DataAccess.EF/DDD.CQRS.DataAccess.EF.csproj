@@ -9,6 +9,11 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\DDD.CQRS.Domain\DDD.CQRS.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
     </ItemGroup>
 </Project>
