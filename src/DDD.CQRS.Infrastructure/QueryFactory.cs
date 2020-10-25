@@ -8,17 +8,17 @@ namespace DDD.CQRS.Infrastructure
 {
     public class QueryFactory : IQueryFactory
     {
-        private readonly Func<Type, object> resolveCallback;
+        private readonly Func<Type, object> _resolveCallback;
 
         public QueryFactory(Func<Type, object> resolveCallback)
         {
-            this.resolveCallback = resolveCallback;
+            _resolveCallback = resolveCallback;
         }
 
         public T ResolveQuery<T>()
             where T : class, IQuery
         {
-            return resolveCallback(typeof(T)) as T;
+            return _resolveCallback(typeof(T)) as T;
         }
     }
 }

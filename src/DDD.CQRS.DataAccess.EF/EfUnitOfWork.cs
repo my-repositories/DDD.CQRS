@@ -13,7 +13,7 @@ namespace DDD.CQRS.DataAccess.EF
     public class EfUnitOfWork<TContext> : IUnitOfWork
         where TContext : DbContext
     {
-        private bool disposed;
+        private bool _disposed;
 
         public EfUnitOfWork(TContext context)
         {
@@ -45,7 +45,7 @@ namespace DDD.CQRS.DataAccess.EF
 
         protected virtual void Dispose(bool disposing)
         {
-            if (disposed)
+            if (_disposed)
             {
                 return;
             }
@@ -59,7 +59,7 @@ namespace DDD.CQRS.DataAccess.EF
                 }
             }
 
-            disposed = true;
+            _disposed = true;
         }
     }
 }
