@@ -1,5 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <RepositoryUrl>https://github.com/my-repositories/DDD.CQRS</RepositoryUrl>
+        <PackageVersion>1.0.0</PackageVersion>
+        <PackageId>DDD.CQRS.DataAccess.EF</PackageId>
+        <Title>DDD.CQRS DataAccess.EF</Title>
+        <Authors>Aleksandr Loktionov</Authors>
+        <Description>DDD.CQRS DataAccess.EF.</Description>
+        <PackageTags>ddd;cqrs</PackageTags>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <CodeAnalysisRuleSet>../../tools/DDD.CQRS.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>

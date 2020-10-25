@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          cd src/DDD.CQRS.Abstract && dotnet pack -c Release && cd ../..
+          cd src/DDD.CQRS.Domain && dotnet pack -c Release && cd ../..
+          cd src/DDD.CQRS.Infrastructure && dotnet pack -c Release && cd ../..
+          cd src/DDD.CQRS.DataAccess.EF && dotnet pack -c Release && cd ../..
+
+      - name: Push GH-Packages
+        run: |
+          dotnet nuget add source https://nuget.pkg.github.com/my-repositories/index.json -n github -u my-repositories -p GH_TOKEN --store-password-in-clear-text
+          dotnet nuget push "src/DDD.CQRS.Abstract/bin/Release/DDD.CQRS.Abstract.1.0.0.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/my-repositories/index.json --skip-duplicate --no-symbols 1
+          dotnet nuget push "src/DDD.CQRS.Domain/bin/Release/DDD.CQRS.Domain.1.0.0.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/my-repositories/index.json --skip-duplicate --no-symbols 1
+          dotnet nuget push "src/DDD.CQRS.Infrastructure/bin/Release/DDD.CQRS.Infrastructure.1.0.0.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/my-repositories/index.json --skip-duplicate --no-symbols 1
+          dotnet nuget push "src/DDD.CQRS.DataAccess.EF/bin/Release/DDD.CQRS.DataAccess.EF.1.0.0.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/my-repositories/index.json --skip-duplicate --no-symbols 1
