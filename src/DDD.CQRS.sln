@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD.CQRS.Abstract", "DDD.CQRS.Abstract\DDD.CQRS.Abstract.csproj", "{5F6C942A-DE35-42D8-8C8E-5BCC269D6969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD.CQRS.Domain", "DDD.CQRS.Domain\DDD.CQRS.Domain.csproj", "{174F2A5E-DF68-4147-B897-7830021A46B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F6C942A-DE35-42D8-8C8E-5BCC269D6969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6C942A-DE35-42D8-8C8E-5BCC269D6969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6C942A-DE35-42D8-8C8E-5BCC269D6969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6C942A-DE35-42D8-8C8E-5BCC269D6969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174F2A5E-DF68-4147-B897-7830021A46B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174F2A5E-DF68-4147-B897-7830021A46B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174F2A5E-DF68-4147-B897-7830021A46B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174F2A5E-DF68-4147-B897-7830021A46B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
